@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_pages",
+  "info": {
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "contact-page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "maxLength": 255
+    },
+    "curchName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "curchStreet": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "curchPlzCity": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "curchPriest": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "curchPhone": {
+      "type": "string",
+      "maxLength": 255
+    }
+  }
+}
