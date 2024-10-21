@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "home_pages",
   "info": {
     "singularName": "home-page",
@@ -12,17 +12,12 @@
   "pluginOptions": {},
   "attributes": {
     "content": {
-      "type": "blocks",
-      "required": true
+      "type": "blocks"
     },
     "heroImage": {
-      "allowedTypes": [
-        "images",
-        "videos"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      "type": "component",
+      "repeatable": false,
+      "component": "base.base-image"
     }
   }
 }

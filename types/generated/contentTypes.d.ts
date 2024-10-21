@@ -788,7 +788,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiContactPageContactPage extends Schema.CollectionType {
+export interface ApiContactPageContactPage extends Schema.SingleType {
   collectionName: 'contact_pages';
   info: {
     singularName: 'contact-page';
@@ -881,12 +881,12 @@ export interface ApiGalleryGallery extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    coverImage: Attribute.Media & Attribute.Required;
     shortDescription: Attribute.String &
       Attribute.SetMinMaxLength<{
         maxLength: 80;
       }> &
       Attribute.DefaultTo<'Rekolekcje z warsztat\u00F3w odnowy w Duchu \u015Aw w W\u0105dolicach g\u00F3rnych'>;
+    coverImage: Attribute.Component<'base.base-image'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -905,7 +905,7 @@ export interface ApiGalleryGallery extends Schema.CollectionType {
   };
 }
 
-export interface ApiHomePageHomePage extends Schema.CollectionType {
+export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
     singularName: 'home-page';
@@ -916,8 +916,8 @@ export interface ApiHomePageHomePage extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    content: Attribute.Blocks & Attribute.Required;
-    heroImage: Attribute.Media & Attribute.Required;
+    content: Attribute.Blocks;
+    heroImage: Attribute.Component<'base.base-image'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -929,6 +929,37 @@ export interface ApiHomePageHomePage extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiImpressumImpressum extends Schema.SingleType {
+  collectionName: 'impressums';
+  info: {
+    singularName: 'impressum';
+    pluralName: 'impressums';
+    displayName: 'impressum';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    impressum: Attribute.Component<'base.title-content'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::impressum.impressum',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::impressum.impressum',
       'oneToOne',
       'admin::user'
     > &
@@ -958,13 +989,13 @@ export interface ApiNewsItemNewsItem extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    coverImage: Attribute.Media;
     slug: Attribute.String &
       Attribute.Required &
       Attribute.Unique &
       Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
+    coverImage: Attribute.Component<'base.base-image'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -976,6 +1007,37 @@ export interface ApiNewsItemNewsItem extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::news-item.news-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
+  collectionName: 'privacy_policies';
+  info: {
+    singularName: 'privacy-policy';
+    pluralName: 'privacy-policies';
+    displayName: 'privacy-policy';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    privacy: Attribute.Component<'base.title-content'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
       'oneToOne',
       'admin::user'
     > &
@@ -1004,7 +1066,9 @@ declare module '@strapi/types' {
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::impressum.impressum': ApiImpressumImpressum;
       'api::news-item.news-item': ApiNewsItemNewsItem;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
     }
   }
 }
