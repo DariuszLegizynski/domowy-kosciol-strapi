@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_about_us_testimonials",
+  "info": {
+    "displayName": "aboutUsTestimonials",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "aboutUsTestimonialsContent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "base.title-content"
+    }
+  }
+}

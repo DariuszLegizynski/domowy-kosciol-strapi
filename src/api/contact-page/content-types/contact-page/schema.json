@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "contact_pages",
   "info": {
     "singularName": "contact-page",

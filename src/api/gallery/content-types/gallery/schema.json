@@ -37,13 +37,16 @@
       "type": "string",
       "maxLength": 255
     },
+    "shortDescription": {
+      "type": "string",
+      "required": false,
+      "maxLength": 80,
+      "default": "Rekolekcje z warsztatów odnowy w Duchu Św w Wądolicach górnych"
+    },
     "coverImage": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+      "type": "component",
+      "repeatable": false,
+      "component": "base.base-image"
     }
   }
 }

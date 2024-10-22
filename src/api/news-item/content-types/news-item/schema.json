@@ -25,19 +25,16 @@
       "type": "string",
       "maxLength": 255
     },
-    "coverImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "slug": {
       "type": "string",
       "required": true,
       "maxLength": 255,
       "unique": true
+    },
+    "coverImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "base.base-image"
     }
   }
 }

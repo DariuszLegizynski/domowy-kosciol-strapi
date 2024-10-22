@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_base_title_contents",
+  "info": {
+    "displayName": "baseTitleContent",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    }
+  }
+}
