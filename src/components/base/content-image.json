@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_base_content_images",
+  "info": {
+    "displayName": "baseImageContent",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "base.base-image"
+    }
+  }
+}

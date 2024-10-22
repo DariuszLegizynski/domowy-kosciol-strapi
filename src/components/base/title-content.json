@@ -1,8 +1,9 @@
 {
   "collectionName": "components_base_title_contents",
   "info": {
-    "displayName": "titleContent",
-    "icon": "bulletList"
+    "displayName": "baseTitleContent",
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {

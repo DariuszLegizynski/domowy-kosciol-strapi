@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_section_about_us_mains",
+  "info": {
+    "displayName": "AboutUsMain",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "aboutUsContent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "base.content-image"
+    }
+  }
+}

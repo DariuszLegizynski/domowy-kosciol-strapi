@@ -12,11 +12,25 @@ export interface BaseBaseImage extends Schema.Component {
   };
 }
 
+export interface BaseContentImage extends Schema.Component {
+  collectionName: 'components_base_content_images';
+  info: {
+    displayName: 'baseImageContent';
+    icon: 'layout';
+    description: '';
+  };
+  attributes: {
+    content: Attribute.Blocks;
+    image: Attribute.Component<'base.base-image'>;
+  };
+}
+
 export interface BaseTitleContent extends Schema.Component {
   collectionName: 'components_base_title_contents';
   info: {
-    displayName: 'titleContent';
+    displayName: 'baseTitleContent';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
@@ -24,11 +38,49 @@ export interface BaseTitleContent extends Schema.Component {
   };
 }
 
+export interface SectionAboutUsIcon extends Schema.Component {
+  collectionName: 'components_section_about_us_icons';
+  info: {
+    displayName: 'aboutUsIcon';
+    icon: 'picture';
+  };
+  attributes: {
+    aboutUsIconContent: Attribute.Component<'base.content-image', true>;
+  };
+}
+
+export interface SectionAboutUsMain extends Schema.Component {
+  collectionName: 'components_section_about_us_mains';
+  info: {
+    displayName: 'AboutUsMain';
+    icon: 'file';
+  };
+  attributes: {
+    title: Attribute.String;
+    aboutUsContent: Attribute.Component<'base.content-image', true>;
+  };
+}
+
+export interface SectionAboutUsTestimonials extends Schema.Component {
+  collectionName: 'components_section_about_us_testimonials';
+  info: {
+    displayName: 'aboutUsTestimonials';
+    icon: 'bulletList';
+  };
+  attributes: {
+    aboutUsTestimonialsContent: Attribute.Component<'base.title-content', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'base.base-image': BaseBaseImage;
+      'base.content-image': BaseContentImage;
       'base.title-content': BaseTitleContent;
+      'section.about-us-icon': SectionAboutUsIcon;
+      'section.about-us-main': SectionAboutUsMain;
+      'section.about-us-testimonials': SectionAboutUsTestimonials;
     }
   }
 }

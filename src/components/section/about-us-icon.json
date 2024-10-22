@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_about_us_icons",
+  "info": {
+    "displayName": "aboutUsIcon",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "aboutUsIconContent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "base.content-image"
+    }
+  }
+}
