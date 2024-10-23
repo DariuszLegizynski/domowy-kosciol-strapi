@@ -839,7 +839,12 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
       Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    phoneNumber: Attribute.String &
+    phoneNumberA: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    phoneNumberB: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 255;
@@ -867,6 +872,11 @@ export interface ApiContactPageContactPage extends Schema.SingleType {
         maxLength: 255;
       }>;
     curchPhone: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    curchEmail: Attribute.Email &
+      Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;

@@ -17,7 +17,12 @@
       "required": true,
       "maxLength": 255
     },
-    "phoneNumber": {
+    "phoneNumberA": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "phoneNumberB": {
       "type": "string",
       "required": true,
       "maxLength": 255
@@ -46,6 +51,11 @@
     },
     "curchPhone": {
       "type": "string",
+      "maxLength": 255
+    },
+    "curchEmail": {
+      "type": "email",
+      "required": true,
       "maxLength": 255
     }
   }
